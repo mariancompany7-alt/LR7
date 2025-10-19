@@ -2,7 +2,7 @@
 #define SIZE 2
 using namespace std;
 
-/*template <typename T>
+template <typename T>
 T Average() {
 	const int size = 5;
 	T array[size];
@@ -38,35 +38,25 @@ T amax() {
 
 	return maxValue;
 }
-*/
 
 template <typename T>
 class Myclass {
 	T array[SIZE];
 public:
-	/*Myclass();*/
-	//Myclass(int size);
-	/*void setSize(int size);
-	int getSize();*/
-	void inputArray(/*, int size*/);
+	Myclass();
+	void inputArray();
 	void print() const;
 	void averageValue();
 	void maximumValue();
 	~Myclass();
 };
 
-//template <typename T>
-//Myclass<T>::Myclass() {}
+template<typename T>
+Myclass<T>::Myclass() {}
 
-//template <typename T>
-//Myclass<T>::Myclass(int size) {
-//	cout << "Input array size: ";
-//	cin >> size;
-//	/*this->size = size;*/
-//}
 
 template <typename T>
-void Myclass<T>::inputArray(/*, int size*/) {
+void Myclass<T>::inputArray() {
 	cout << "Input " << SIZE << " array elements: " << endl;
 	for (int i = 0; i < SIZE; i++) {
 		cin >> array[i];
@@ -103,41 +93,28 @@ void Myclass<T>::maximumValue() {
 	cout << "Maximum value: " << maxValue << endl;
 }
 
-//template <typename T>
-////void Myclass<T>::setSize(int size) {
-////	this->size = size;
-////}
-
-//template <typename T>
-//int Myclass<T>::getSize() {
-//	return this->size;
-//}
-
 template <typename T>
 Myclass<T>::~Myclass() {}
 
 int main() {
 
-	/*cout << "average value: " << Average<int>() << endl;
-	cout << "average value: " << Average<double>() << endl;
+	cout << "average value: " << Average<int>() << endl;
+	/*cout << "average value: " << Average<double>() << endl;
 	cout << "average value: " << Average<char>() << endl;
-	cout << "average value: " << Average<long>() << endl;
+	cout << "average value: " << Average<long>() << endl;*/
 
 	cout << "maximum value: " << amax<int>() << endl;
-	cout << "maximum value: " << amax<double>() << endl;
+	/*cout << "maximum value: " << amax<double>() << endl;
 	cout << "maximum value: " << amax<char>() << endl;
 	cout << "maximum value: " << amax<long>() << endl;*/
 
-	/*Myclass<int>* ptr;
-	ptr = (Myclass<int>*)new int [sizeof(Myclass<int>) + 3*sizeof(int)];*/
-	/*Myclass<int>setSize(3);*/
-	Myclass<int>object2;
+	/*Myclass<int>object2;
 	object2.inputArray();
 	object2.print();
 	object2.maximumValue();
 	object2.averageValue();
 
-	/*Myclass<double>object3;
+	Myclass<double>object3;
 	object3.inputArray();
 	object3.print();
 	object3.maximumValue();
@@ -147,13 +124,13 @@ int main() {
 	object4.inputArray();
 	object4.print();
 	object4.maximumValue();
-	object4.averageValue();
+	object4.averageValue();*/
 
 	Myclass<long>object5;
 	object5.inputArray();
 	object5.print();
 	object5.maximumValue();
-	object5.averageValue();*/
+	object5.averageValue();
 
 	return 0;
 }
