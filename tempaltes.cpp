@@ -1,4 +1,5 @@
 #include <iostream>
+#define SIZE 2
 using namespace std;
 
 /*template <typename T>
@@ -41,51 +42,82 @@ T amax() {
 
 template <typename T>
 class Myclass {
-	T array[];
-	int size;
+	T array[SIZE];
 public:
-	Myclass();
-	Myclass(int size);
+	/*Myclass();*/
+	//Myclass(int size);
+	/*void setSize(int size);
+	int getSize();*/
+	void inputArray(/*, int size*/);
+	void print() const;
+	void averageValue();
+	void maximumValue();
 	~Myclass();
-	void print(int size);
-	void setSize(int size);
-	int getSize();
 };
 
-template <typename T>
-Myclass<T>::Myclass() { this->size = 0; }
+//template <typename T>
+//Myclass<T>::Myclass() {}
+
+//template <typename T>
+//Myclass<T>::Myclass(int size) {
+//	cout << "Input array size: ";
+//	cin >> size;
+//	/*this->size = size;*/
+//}
 
 template <typename T>
-Myclass<T>::Myclass(int size) { 
-	this->size = size; 
-	cout << "Input size of array: ";
-	for (int i = 0; i < size; i++) {
+void Myclass<T>::inputArray(/*, int size*/) {
+	cout << "Input " << SIZE << " array elements: " << endl;
+	for (int i = 0; i < SIZE; i++) {
 		cin >> array[i];
 	}
 }
 
 template <typename T>
-void Myclass<T>::print(int size) {
-	cout << "Array:" << endl;
-	for (int i = 0; i < size; i++) {
-		cout << "" << array[i];
+void Myclass<T>::print() const{
+	cout << "Array: ";
+	for (int i = 0; i < SIZE; i++) {
+		cout << "->" << array[i];
 	}
+	cout << endl;
 }
 
 template <typename T>
-void Myclass<T>::setSize(int size) {
-	this->size = size;
+void Myclass<T>::averageValue() {
+	T averageValue = 0;
+	for (int i = 0; i < SIZE; i++) {
+		averageValue += array[i];
+	}
+	averageValue /= SIZE;
+	cout << "Average value: " << averageValue << endl;
 }
 
 template <typename T>
-int Myclass<T>::getSize() {
-	cout << "";
+void Myclass<T>::maximumValue() {
+	T maxValue = array[0];
+	for (int i = 1; i < SIZE; i++) {
+		if (array[i] > maxValue) {
+			maxValue = array[i];
+		}
+	}
+	cout << "Maximum value: " << maxValue << endl;
 }
+
+//template <typename T>
+////void Myclass<T>::setSize(int size) {
+////	this->size = size;
+////}
+
+//template <typename T>
+//int Myclass<T>::getSize() {
+//	return this->size;
+//}
 
 template <typename T>
 Myclass<T>::~Myclass() {}
 
 int main() {
+
 	/*cout << "average value: " << Average<int>() << endl;
 	cout << "average value: " << Average<double>() << endl;
 	cout << "average value: " << Average<char>() << endl;
@@ -96,9 +128,32 @@ int main() {
 	cout << "maximum value: " << amax<char>() << endl;
 	cout << "maximum value: " << amax<long>() << endl;*/
 
-	Myclass<int> object;
-	Myclass<int>object2(3);
-	object.print(3);
+	/*Myclass<int>* ptr;
+	ptr = (Myclass<int>*)new int [sizeof(Myclass<int>) + 3*sizeof(int)];*/
+	/*Myclass<int>setSize(3);*/
+	Myclass<int>object2;
+	object2.inputArray();
+	object2.print();
+	object2.maximumValue();
+	object2.averageValue();
+
+	/*Myclass<double>object3;
+	object3.inputArray();
+	object3.print();
+	object3.maximumValue();
+	object3.averageValue();
+
+	Myclass<char>object4;
+	object4.inputArray();
+	object4.print();
+	object4.maximumValue();
+	object4.averageValue();
+
+	Myclass<long>object5;
+	object5.inputArray();
+	object5.print();
+	object5.maximumValue();
+	object5.averageValue();*/
 
 	return 0;
 }
